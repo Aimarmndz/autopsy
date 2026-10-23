@@ -61,6 +61,9 @@
         <!-- for viewers -->
         <dependency conf="autopsy_core->default" org="org.freedesktop.gstreamer" name="gst1-java-core" rev="1.4.0"/>
         <dependency conf="autopsy_core->default" org="net.java.dev.jna" name="jna-platform" rev="5.18.1"/>
+        <!-- gst1-java-core asks for jna [5.2.0,6.0), so Ivy picks the newest release unless pinned;
+             nbproject/project.xml expects jna-5.18.1.jar. -->
+        <dependency conf="autopsy_core->default" org="net.java.dev.jna" name="jna" rev="5.18.1" force="true"/>
         
         <!-- for file search -->
         <dependency conf="autopsy_core->default" org="com.github.lgooddatepicker" name="LGoodDatePicker" rev="11.2.1"/>
